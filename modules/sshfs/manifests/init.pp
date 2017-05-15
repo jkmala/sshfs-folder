@@ -21,7 +21,7 @@ class sshfs {
 		device => "sshfs#a1402745@myy.haaga-helia.fi:/netapp/nfstiko/u10/a1402745/",
 		ensure => "mounted",
 		fstype  => "fuse",
-		options => "idmap=user,uid=999,gid=999,-p22,-C",
+		options => "idmap=user,uid=1000,gid=1000,-p22,-C,IdentityFile=/home/juhaku/.ssh/id_rsa",
 		dump => "0",
 		pass => "0",
 		remounts => false,
