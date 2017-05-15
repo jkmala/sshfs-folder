@@ -17,13 +17,10 @@ class sshfs {
 				Package['sshfs'],
 			   ],
 		name => "/home/juhaku/koulu/",
-		atboot => true,
 		device => "sshfs#a1402745@myy.haaga-helia.fi:/netapp/nfstiko/u10/a1402745/",
 		ensure => "mounted",
 		fstype  => "fuse",
-		options => "idmap=user,uid=1000,gid=1000,-p22,-C,IdentityFile=/home/juhaku/.ssh/id_rsa",
-		dump => "0",
-		pass => "0",
+		options => "idmap=user,uid=1000,gid=1000,-p22,-C,IdentityFile=/home/juhaku/.ssh/id_rsa,allow_other",
 		remounts => false,
 
 	}
