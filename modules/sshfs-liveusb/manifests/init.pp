@@ -15,6 +15,8 @@ class sshfs-liveusb {
 		require => [
 				File['/home/xubuntu/koulu/'],
 				Package['sshfs'],
+				File ['/home/xubuntu/.ssh/id_rsa'],
+				File ['/home/xubuntu/.shh/known_hosts'],
 			   ],
 		name => "/home/xubuntu/koulu/",
 		device => "sshfs#a1402745@myy.haaga-helia.fi:/netapp/nfstiko/u10/",
@@ -26,7 +28,8 @@ class sshfs-liveusb {
 	}
 
 	file {'/home/xubuntu/.ssh/id_rsa':
-		ensure => present,
+		ensure => file,
+		replace => 'true',
 		owner => 'xubuntu',
 		group => 'xubuntu',
 		mode => '0600',
@@ -34,7 +37,8 @@ class sshfs-liveusb {
 	}
 
 	file {'/home/xubuntu/.shh/known_hosts':
-		ensure => present,
+		ensure => file,
+		replace => 'true',
 		owner => 'xubuntu',
 		group => 'xubuntu',
 		mode => '0644',
