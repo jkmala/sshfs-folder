@@ -13,3 +13,8 @@ Ongelmia:
 
 
 Valitettavasti en saanut toimimaan :(
+
+Kurssin muut tehtävät:
+1. https://jkmala.wordpress.com/2017/04/04/1-tunti-puppetin-hallinta/
+2. https://github.com/jkmala/linuxcourse/blob/master/2nd_homework.md
+3. https://github.com/jkmala/linuxcourse/blob/master/sshd/homework3.md
