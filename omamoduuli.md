@@ -10,6 +10,7 @@ Ongelmia:
 - ei varmaan ole tietoturvallista säilyttää private avainta github -kansiossa.
 
 [init.pp] (https://github.com/jkmala/sshfs-folder/blob/master/modules/sshfs-liveusb/manifests/init.pp)
+Muutama rivi kommentoitu...
 
 Ensimmäisellä ajolla:
 
