@@ -5,7 +5,7 @@ class sshfs-liveusb {
 		owner => 'xubuntu',
 		group => 'xubuntu',
 	}
-
+	
 	package {sshfs:
 		ensure => "installed",
 		allowcdrom => true,
@@ -15,8 +15,8 @@ class sshfs-liveusb {
 		require => [
 				File['/home/xubuntu/koulu/'],
 				Package['sshfs'],
-				File ['/home/xubuntu/.ssh/id_rsa'],
-				File ['/home/xubuntu/.shh/known_hosts'],
+#				File ['/home/xubuntu/.ssh/id_rsa'],
+#				File ['/home/xubuntu/.shh/known_hosts'],
 			   ],
 		name => "/home/xubuntu/koulu/",
 		device => "sshfs#a1402745@myy.haaga-helia.fi:/netapp/nfstiko/u10/",
@@ -26,23 +26,25 @@ class sshfs-liveusb {
 		remounts => false,
 
 	}
+#	file {'/home/xubuntu/.shh/':
+#		ensure => 'directory',
+#		owner => 'xubuntu',
+#		group => 'xubuntu',
 
-	file {'/home/xubuntu/.ssh/id_rsa':
-		ensure => file,
-		replace => 'true',
-		owner => 'xubuntu',
-		group => 'xubuntu',
-		mode => '0600',
-		content => template('sshfs-liveusb/id_rsa.erb'),
-	}
+#	}
 
-	file {'/home/xubuntu/.shh/known_hosts':
-		ensure => file,
-		replace => 'true',
-		owner => 'xubuntu',
-		group => 'xubuntu',
-		mode => '0644',
-		content => template('sshfs-liveusb/known_hosts.erb'),
+#	file {'/home/xubuntu/.ssh/id_rsa':
+#		owner => 'xubuntu',
+#		group => 'xubuntu',
+#		mode => '0600',
+#		content => template('sshfs-liveusb/id_rsa.erb'),
+#	}
+#
+#	file {'/home/xubuntu/.shh/known_hosts':
+#		owner => 'xubuntu',
+#		group => 'xubuntu',
+#		mode => '0644',
+#		content => template('sshfs-liveusb/known_hosts.erb'),
 
-	}
+#	}
 }
