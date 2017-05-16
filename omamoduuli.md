@@ -7,6 +7,7 @@ Löysin [esimerkkin](https://lessknown.info/2011/08/managing-sshfs-with-puppet/)
 Ongelmia:
 - SSH avaimet oikeassa paikassa? virheteksti: "connection reset by peer"
 - Olisko joku resurssi ssh_keygen?
+- ei tietoturvallista säilyttää private avainta github -kansiossa.
 
 [init.pp] (https://github.com/jkmala/sshfs-folder/modules/sshfs-liveusb/manifests/init.pp)
 
